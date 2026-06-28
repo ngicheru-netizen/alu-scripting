@@ -1,11 +1,11 @@
 #!/usr/bin/python3
-"""Find total subscriber count of subreddit
-from reddit API"""
+"""Find total subscriber count of subreddit from reddit API"""
 
 import requests
 
 
 def number_of_subscribers(subreddit):
+    """Return the number of subscribers for a given subreddit, or 0 if invalid."""
 
     url = f"https://www.reddit.com/r/{subreddit}/about.json"
     user_agent = "macos:com.intranet.apistuff:v1.0.0(by /u/PlasticDrummer2706)"
