@@ -22,4 +22,5 @@ def number_of_subscribers(subreddit):
         return 0
 
 
-print(number_of_subscribers("programming"))
+if __name__ == "__main__":
+    pass
