@@ -14,9 +14,13 @@ def top_ten(subreddit):
     if response.status_code == 200:
         parsed_data = response.json()
         hot_posts = parsed_data["data"]["children"]
-        top_ten_posts = hot_posts[:10]
-        return top_ten_posts
+
+        for post in hot_posts[:10]:
+
+            print(post["data"]["title"])
+        else:
+            print(None)
 
 
 if __name__ == "__main__":
-    print(top_ten("programming"))
+    top_ten("programming")
