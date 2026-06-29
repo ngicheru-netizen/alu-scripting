@@ -16,7 +16,7 @@ def recurse(subreddit, hot_list=None, after=None):
     response = requests.get(url, headers=headers, allow_redirects=False)
 
     if response.status_code != 200:
-        print("Error: Received status code {}".format(response.status_code))
+        # print("Error: Received status code {}".format(response.status_code))
         return hot_list
 
     try:
