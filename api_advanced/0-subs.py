@@ -10,7 +10,8 @@ import requests
 
 
 def number_of_subscribers(subreddit):
-    """Return the number of subscribers for a given subreddit, or 0 if invalid."""
+    """Return the number of subscribers
+    for a given subreddit, or 0 if invalid."""
 
     url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
     # changed from f string to .format()
