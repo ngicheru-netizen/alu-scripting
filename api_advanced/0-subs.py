@@ -12,7 +12,9 @@ import requests
 def number_of_subscribers(subreddit):
     """Return the number of subscribers for a given subreddit, or 0 if invalid."""
 
-    url = f"https://www.reddit.com/r/{subreddit}/about.json"
+    url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
+    # changed from f string to .format()
+
     user_agent = "macos:com.intranet.apistuff:v1.0.0(by /u/PlasticDrummer2706)"
     headers = {"User-Agent": user_agent}
 
