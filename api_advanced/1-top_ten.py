@@ -9,7 +9,7 @@ def top_ten(subreddit):
     user_agent = "macos:com.intranet.apistuff:v1.0.0(by /u/PlasticDrummer2706)"
     headers = {"User-Agent": user_agent}
 
-    response = requests.get(url, headers=headers)
+    response = requests.get(url, headers=headers, allow_redirects=False)
 
     if response.status_code == 200:
         parsed_data = response.json()
