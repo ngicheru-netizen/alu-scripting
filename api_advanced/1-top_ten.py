@@ -18,8 +18,8 @@ def top_ten(subreddit):
         for post in hot_posts[:10]:
 
             print(post["data"]["title"])
-        else:
-            print(None)
+    else:
+        print(None)
 
 
 if __name__ == "__main__":
