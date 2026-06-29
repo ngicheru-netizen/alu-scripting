@@ -1,5 +1,10 @@
 #!/usr/bin/python3
-"""Find total subscriber count of subreddit from reddit API"""
+"""Query the Reddit API over HTTP and return a subreddit's subscriber count.
+
+Sends an HTTP GET request to the Reddit API endpoint for a given subreddit,
+parses the JSON response, and returns the total number of subscribers.
+Returns 0 for an invalid subreddit (non-200 response / redirect).
+"""
 
 import requests
 
