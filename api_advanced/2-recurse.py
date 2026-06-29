@@ -4,7 +4,9 @@
 import requests
 
 
-def recurse(subreddit, hot_list=[], after=None):
+def recurse(subreddit, hot_list=None, after=None):
+    if hot_list is None:
+        hot_list = []
 
     url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
     user_agent = "macos:com.intranet.apistuff:v1.0.0(by /u/PlasticDrummer2706)"
@@ -14,7 +16,7 @@ def recurse(subreddit, hot_list=[], after=None):
     response = requests.get(url, headers=headers, allow_redirects=False)
 
     if response.status_code != 200:
-        print(f"Error: Received status code {response.status_code}")
+        print("Error: Received status code {}".format(response.status_code))
         return hot_list
 
     try:
@@ -33,7 +35,7 @@ def recurse(subreddit, hot_list=[], after=None):
 
     # base case
 
-    next_after = data["data"].get["after"]
+    next_after = data["data"].get("after")
 
     if next_after is None:
         return hot_list
